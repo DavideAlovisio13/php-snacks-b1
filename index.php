@@ -26,6 +26,52 @@ $stagione = [
     ],
 ];
 
+$posts = [
+    '01/05/2024' => [
+        [
+            'title' => 'Unione Europea e Innovazione',
+            'author' => 'Mario Rossi',
+            'text' => 'L\'Unione Europea sta guidando l\'innovazione tecnologica con il suo nuovo piano di investimenti in IA e blockchain. Questo potrebbe segnare l\'inizio di una nuova era per l\'Europa.'
+        ],
+    ],
+    '02/05/2024' => [
+        [
+            'title' => 'Politica Ambientale Europea',
+            'author' => 'Luca Bianchi',
+            'text' => 'La politica ambientale dell\'UE sta dando i suoi frutti. Le emissioni di CO2 sono diminuite del 20% negli ultimi 10 anni. Un grande passo avanti per il nostro pianeta.'
+        ],
+    ],
+    '03/05/2024' => [
+        [
+            'title' => 'L\'UE e la Crisi dei Rifugiati',
+            'author' => 'Giulia Verdi',
+            'text' => 'L\'UE deve affrontare la crisi dei rifugiati con solidarietà e cooperazione tra gli stati membri. È una sfida che riguarda tutti noi.'
+        ],
+    ],
+    '04/05/2024' => [
+        [
+            'title' => 'L\'Euro e l\'Economia Europea',
+            'author' => 'Francesco Neri',
+            'text' => 'L\'Euro ha svolto un ruolo cruciale nel mantenere la stabilità economica in Europa durante la pandemia. È un esempio di come l\'unione fa la forza.'
+        ],
+    ],
+    '05/05/2024' => [
+        [
+            'title' => 'Politica Estera dell\'UE',
+            'author' => 'Laura Gialli',
+            'text' => 'La politica estera dell\'UE sta diventando sempre più influente a livello globale. L\'UE sta dimostrando che può essere un attore globale.'
+        ],
+    ],
+    '06/05/2024' => [
+        [
+            'title' => 'L\'UE e i Diritti Umani',
+            'author' => 'Marco Azzurri',
+            'text' => 'L\'UE continua a essere un faro per i diritti umani nel mondo. La sua dedizione alla protezione dei diritti umani è ammirevole.'
+        ],
+    ],
+];
+
+
 ?>
 
 <!DOCTYPE html>
@@ -51,6 +97,20 @@ $stagione = [
         Età: <input type="text" name="age"><br>
         <input type="submit">
     </form>
+
+    <h2>3° snack</h2>
+    <?php
+    foreach ($posts as $data => $postArray) {
+        echo "<h2>Data: " . htmlspecialchars($data) . "</h2>";
+        echo "<div class='post'>";
+        foreach ($postArray as $post) {
+            echo "<h3>Titolo: " . htmlspecialchars($post['title']) . "</h3>";
+            echo "<p><strong>Autore:</strong> " . htmlspecialchars($post['author']) . "</p>";
+            echo "<p><strong>Testo:</strong> " . htmlspecialchars($post['text']) . "</p>";
+        }
+        echo "</div><br>";
+    }
+    ?>
 
 </body>
 
