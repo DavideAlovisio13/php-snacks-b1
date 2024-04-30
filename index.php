@@ -83,6 +83,31 @@ $paragrafo = "La questione israelo-palestinese è un conflitto geopolitico di lu
 // La funzione strtok restituisce la stringa fino al primo punto, quindi continua da dove si è fermata ogni volta che viene chiamata di nuovo.
 $paragrafo = strtok($paragrafo, ".");
 
+// snack 6
+
+$db = [
+    'teachers' => [
+        [
+            'name' => 'Michele',
+            'lastname' => 'Papagni'
+        ],
+        [
+            'name' => 'Fabio',
+            'lastname' => 'Forghieri'
+        ]
+    ],
+    'pm' => [
+        [
+            'name' => 'Roberto',
+            'lastname' => 'Marazzini'
+        ],
+        [
+            'name' => 'Federico',
+            'lastname' => 'Pellegrini'
+        ]
+    ]
+];
+
 ?>
 
 <!DOCTYPE html>
@@ -91,6 +116,7 @@ $paragrafo = strtok($paragrafo, ".");
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./scss/style.scss">
     <title>PhpSnacks</title>
 </head>
 
@@ -132,12 +158,27 @@ $paragrafo = strtok($paragrafo, ".");
     <p><strong>Numeri Randomici: </strong><?php echo implode(',', $array_numeri_casuali); ?></p>
 
     <h2>5° snack</h2>
-    <?php 
+    <?php
     while ($paragrafo !== false) {
         echo "<p>" . $paragrafo . ".</p>";
         $paragrafo = strtok(".");
     }
     ?>
+
+    <h2>6° snack</h2>
+    <div class="school">
+        <?php
+        foreach ($db as $role => $people) {
+            echo "<div class='$role'>";
+            echo "<h2>" . ucfirst($role) . "</h2>";
+            foreach ($people as $person) {
+                echo "<p>Name: " . $person['name'] . ", Lastname: " . $person['lastname'] . "</p>";
+            }
+            echo "</div>";
+        }
+        ?>
+    </div>
+
 
 </body>
 

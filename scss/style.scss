@@ -1,0 +1,16 @@
+.school {
+    display: flex;
+
+    .teachers {
+        background-color: gray;
+        color: white;
+        margin: 10px;
+        padding: 10px;
+    }
+    .pm {
+        background-color: green;
+        color: white;
+        margin: 10px;
+        padding: 10px;
+    }
+}
