@@ -1,4 +1,5 @@
 <?php
+// snack 1
 $stagione = [
     [
         'squadra_di_casa' => 'LA Lakers',
@@ -26,6 +27,7 @@ $stagione = [
     ],
 ];
 
+// snack 3
 $posts = [
     '01/05/2024' => [
         [
@@ -71,9 +73,15 @@ $posts = [
     ],
 ];
 
-$numeri = range(1, 100); 
+// snack 4
+$numeri = range(1, 100);
 shuffle($numeri);
 $array_numeri_casuali = array_slice($numeri, 0, 15);
+
+// snack 5
+$paragrafo = "La questione israelo-palestinese è un conflitto geopolitico di lunga data che ha radici storiche profonde e complesse. Al centro del conflitto ci sono questioni di terra, identità nazionale e diritti religiosi. Da un lato, c’è Israele, uno Stato ebraico fondato nel 1948, che cerca di mantenere la sua sicurezza e identità in una regione tumultuosa. Dall’altro lato, ci sono i palestinesi, un popolo arabo che rivendica il diritto all’autodeterminazione e alla sovranità nella terra che considerano la loro patria storica. Nonostante gli sforzi di pace e i negoziati, il conflitto persiste, alimentato da questioni irrisolte come lo status di Gerusalemme, i confini, la sicurezza e il diritto al ritorno dei rifugiati palestinesi. La questione israelo-palestinese rimane una delle questioni più complesse e divisive del mondo contemporaneo.";
+// La funzione strtok restituisce la stringa fino al primo punto, quindi continua da dove si è fermata ogni volta che viene chiamata di nuovo.
+$paragrafo = strtok($paragrafo, ".");
 
 ?>
 
@@ -95,10 +103,14 @@ $array_numeri_casuali = array_slice($numeri, 0, 15);
 
     <h2>2° snack</h2>
     <form action="accesso.php" method="GET">
-        Nome: <input type="text" name="name"><br>
-        Email: <input type="text" name="mail"><br>
-        Età: <input type="text" name="age"><br>
-        <input type="submit">
+        <div>
+            <p>Nome:</p> <input type="text" name="name">
+            <p>Email:</p> <input type="text" name="mail">
+            <p>Età:</p> <input type="text" name="age">
+            <div>
+                <input type="submit">
+            </div>
+        </div>
     </form>
 
     <h2>3° snack</h2>
@@ -111,13 +123,21 @@ $array_numeri_casuali = array_slice($numeri, 0, 15);
             echo "<p><strong>Autore:</strong> " . htmlspecialchars($post['author']) . "</p>";
             echo "<p><strong>Testo:</strong> " . htmlspecialchars($post['text']) . "</p>";
         }
-        echo "</div><br>";
+        echo "</div>";
     }
     ?>
 
     <h2>4° snack</h2>
     <!-- la funzione implode serve a trasformare un array in una stringa -->
     <p><strong>Numeri Randomici: </strong><?php echo implode(',', $array_numeri_casuali); ?></p>
+
+    <h2>5° snack</h2>
+    <?php 
+    while ($paragrafo !== false) {
+        echo "<p>" . $paragrafo . ".</p>";
+        $paragrafo = strtok(".");
+    }
+    ?>
 
 </body>
 
