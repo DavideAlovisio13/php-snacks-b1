@@ -89,7 +89,6 @@ $paragrafo = "La questione israelo-palestinese è un conflitto geopolitico di lu
 $paragrafo = strtok($paragrafo, ".");
 
 // snack 6
-
 $db = [
     'teachers' => [
         [
@@ -110,6 +109,25 @@ $db = [
             'name' => 'Federico',
             'lastname' => 'Pellegrini'
         ]
+    ]
+];
+
+// snack 7
+$classe = [
+    [
+        'Nome' => 'Mario',
+        'Cognome' => 'Rossi',
+        'Voti' => [6, 7, 8, 7, 6]
+    ],
+    [
+        'Nome' => 'Luca',
+        'Cognome' => 'Bianchi',
+        'Voti' => [8, 9, 7, 8, 9]
+    ],
+    [
+        'Nome' => 'Giulia',
+        'Cognome' => 'Verdi',
+        'Voti' => [7, 8, 8, 7, 8]
     ]
 ];
 
@@ -183,6 +201,19 @@ $db = [
         }
         ?>
     </div>
+
+    <h2>7° snack</h2>
+    <?php
+    foreach ($classe as $alunno) {
+        echo "<div class='student'>";
+        $nome = $alunno['Nome'];
+        $cognome = $alunno['Cognome'];
+        $media_voti = array_sum($alunno['Voti']) / count($alunno['Voti']);
+        
+        echo "Nome: $nome, Cognome: $cognome, Media Voti: $media_voti\n";
+        echo "</div>";
+    }
+    ?>
 
 
 </body>
