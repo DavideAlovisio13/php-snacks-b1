@@ -71,6 +71,9 @@ $posts = [
     ],
 ];
 
+$numeri = range(1, 100); 
+shuffle($numeri);
+$array_numeri_casuali = array_slice($numeri, 0, 15);
 
 ?>
 
@@ -111,6 +114,10 @@ $posts = [
         echo "</div><br>";
     }
     ?>
+
+    <h2>4° snack</h2>
+    <!-- la funzione implode serve a trasformare un array in una stringa -->
+    <p><strong>Numeri Randomici: </strong><?php echo implode(',', $array_numeri_casuali); ?></p>
 
 </body>
 
