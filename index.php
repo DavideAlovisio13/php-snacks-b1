@@ -56,6 +56,11 @@ $posts = [
             'author' => 'Francesco Neri',
             'text' => 'L\'Euro ha svolto un ruolo cruciale nel mantenere la stabilità economica in Europa durante la pandemia. È un esempio di come l\'unione fa la forza.'
         ],
+        [
+            'title' => 'La Forza dell\'Unione Europea',
+            'author' => 'Mario Draghi',
+            'text' => 'Concordo pienamente con Francesco Neri. L\'Euro ha dimostrato la sua forza durante la pandemia, sottolineando l\'importanza dell\'unione e della cooperazione. Continueremo a lavorare insieme per garantire la stabilità e la prosperità dell\'Europa.'
+        ]
     ],
     '05/05/2024' => [
         [
